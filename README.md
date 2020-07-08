@@ -30,20 +30,20 @@ fab
 
 # Files Explained
 
-docker-compose.yml
+**docker-compose.yml**
 : define all common rules/configuration here; you **should** modify this file
 
-docker-compose-dev.yml
+**docker-compose-dev.yml**
 : define all development only rules/configuration here; you **should** modify this file
 
-docker-compose-prd.yml
+**docker-compose-prd.yml**
 : define all production only rules/configuration here; you **should** modify this file
 
-env_dev.ini
+**env_dev.ini**
 : define all non-sensitive development configuration here; you **should** modify this file
 
-env_prd.ini
+**env_prd.ini**
 : define all non-sensitive production configuration here; you **should** modify this file
 
-fabfile.py
+**fabfile.py**
 : all fabric tasks are defined inside this file; check this file; add your own tasks too!
