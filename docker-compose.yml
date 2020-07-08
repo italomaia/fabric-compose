@@ -1,0 +1,32 @@
+version: '3.8'
+
+# volumes:
+#   db-main-01:
+#     driver: local
+
+services:
+  gateway:
+    build: ./gateway
+    depends_on:
+    - web
+  
+  web:  # html, js, css
+    build: ./web
+    command: ["lapis", "server"]
+    depends_on:
+    - db-main
+    - cache
+  
+  cache:
+    image: redis:6
+    restart: always
+
+  db-main:
+    image: postgres:12
+    restart: always
+  
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+    - 9090:8080

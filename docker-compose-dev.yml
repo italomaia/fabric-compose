@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  gateway:
+    env_file:
+    - env_dev.ini
+    ports: # guest:host
+    - 8080:80
+  
+  web:  # html, js, css
+    volumes:
+    - type: bind
+      source: ./web
+      target: /home/nonroot/code
+
+  db-main:
+    env_file:
+    - env_dev.ini

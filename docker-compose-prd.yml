@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  gateway:
+    env_file:
+    - env_prd.ini
+    ports:  # guest:host
+    - 80:80
+    - 443:443
+  
+  db-main:
+    env_file:
+    - env_prd.ini
